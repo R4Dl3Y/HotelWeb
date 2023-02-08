@@ -15,7 +15,7 @@ export const Autenticacao = () => {
     if (token) {
       api.defaults.headers["authorization"] = `${token}`;
       const user = await api
-        .get("/getprofile")
+        .get("utilizador/getprofile")
         .then((res) => res.data);
       setUser(user);
     }
@@ -23,7 +23,7 @@ export const Autenticacao = () => {
 
   const Login = async (email, password) => {
     const user = await api
-      .post("/login", { email, password })
+      .post("utilizador/login", { email, password })
       .then((res) => res.data);
     setUser(user);
     localStorage.setItem("token", user.token);

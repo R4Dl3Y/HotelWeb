@@ -19,7 +19,7 @@ export const ListaReservas = () => {
   const [recordsPerPage] = useState(10);
 
   useEffect(() => {
-    api.get("reservation")
+    api.get("reservas")
       .then((res) => {
         setData(res.data);
         setDataInicial(res.data)
@@ -35,7 +35,7 @@ export const ListaReservas = () => {
     const { value } = e.target;
     console.log(value);
     if (value !== "") {
-      api.get(`reservation/${value}`)
+      api.get(`reservas/hotel/${value}`)
         .then((res) => {
           setData(res.data);
           setLoading(false);

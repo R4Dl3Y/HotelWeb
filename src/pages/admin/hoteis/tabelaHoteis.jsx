@@ -20,7 +20,7 @@ export const TabelaHoteis = (props) => {
 
     //codigo para apagar
 
-    api.delete("hotel/" + Hotel._Id).then((res) => {
+    api.delete("hoteis/" + Hotel._Id).then((res) => {
       window.location.reload(false)
       closeshowDelete()
     }).catch((err) => {
@@ -42,7 +42,7 @@ export const TabelaHoteis = (props) => {
     }
 
 
-    api.patch("hotel/" + Hotel._Id, disponivel).then((res) => {
+    api.patch("hoteis/" + Hotel._Id, disponivel).then((res) => {
       window.location.reload(false)
       closeShowDisponivel()
     }).catch((err) => {

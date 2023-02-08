@@ -20,12 +20,12 @@ export const PerfilUser = (props) => {
 
 
     useEffect(() => {
-        api.get("reservation/" + User._id).then((res) => {
+        api.get("reservas/user/" + User._id).then((res) => {
             console.log(res.data)
             setReservas(res.data)
-            api.get("/hotels").then((res) => {
+            api.get("/hoteis").then((res) => {
                 setHoteis(res.data)
-                api.get("/rooms").then((res) => {
+                api.get("/quartos").then((res) => {
                     setQuartos(res.data)
                     setLoading(false)
                 }).catch((err) => {

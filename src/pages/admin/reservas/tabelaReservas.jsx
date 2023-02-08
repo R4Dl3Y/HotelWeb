@@ -20,7 +20,7 @@ export const TabelaReservas = (props) => {
 
     const estadoFinal = { "estado": estado }
 
-    api.patch("reservation/" + id, estadoFinal).then((res) => {
+    api.patch("reservas/" + id, estadoFinal).then((res) => {
       console.log(res)
       window.location.reload(false)
     }).catch((err) => {
@@ -31,7 +31,7 @@ export const TabelaReservas = (props) => {
   const Delete = () => {
     //codigo para apagar
 
-    api.delete("reservation/" + Reserva._Id).then((res) => {
+    api.delete("reservas/" + Reserva._Id).then((res) => {
       window.location.reload(false)
       closeshowDelete()
     }

@@ -62,7 +62,7 @@ export const Registro = () => {
 
     } else {
 
-      api.post("/user", user)
+      api.post("/utilizadores", user)
         .then((res) => {
           console.log(res.data)
           navigate("/")

@@ -31,9 +31,9 @@ export const Reservar = (props) => {
     const [Quarto, setQuarto] = useState({})
 
     useEffect(() => {
-        api.get("hotel/" + HotelId).then((res) => {
+        api.get("hoteis/" + HotelId).then((res) => {
             setHotel(res.data);
-            api.get("room/" + QuartoID).then((res) => {
+            api.get("quartos/" + QuartoID).then((res) => {
                 setQuarto(res.data);
             }).catch((err) => {
                 console.log(err);
@@ -106,7 +106,7 @@ const UserData = (props) => {
         }
 
         console.log(user)
-        api.patch("user/" + User._id, user)
+        api.patch("utilizadores/" + User._id, user)
             .then((res) => {
                 console.log(res.data)
                 handleClick()

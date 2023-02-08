@@ -18,10 +18,10 @@ export const PaginaHotel = () => {
     const [quartoHotel, setQuartosHotel] = useState([])
 
     useEffect(() => {
-        api.get("hotel/" + hotelId).then((res) => {
+        api.get("hoteis/" + hotelId).then((res) => {
             setHotel(res.data);
 
-            api.get("room/" + hotelId).then((res) => {
+            api.get("quarto/" + hotelId).then((res) => {
                 setQuartosHotel(res.data);
                 setLoading(false);
 

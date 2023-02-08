@@ -39,7 +39,7 @@ export const EditarCriarUsers = () => {
             setIsLoading(false)
         } else {
             console.log("tem id")
-            api.get("user/" + params.id).then((res) => {
+            api.get("utilizadores/" + params.id).then((res) => {
                 setIsLoading(false)
                 setFormData(res.data)
             }).catch(err => {
@@ -94,7 +94,7 @@ export const EditarCriarUsers = () => {
 
             if (formData._id !== null) {
                 console.log(user)
-                api.patch("user/" + params.id, user)
+                api.patch("utilizadores/" + params.id, user)
                     .then((res) => {
                         console.log(res.data)
                         navigate("/backoffice/users")
@@ -108,7 +108,7 @@ export const EditarCriarUsers = () => {
                     })
             } else {
 
-                api.post("user", user)
+                api.post("utilizadores", user)
                     .then((res) => {
                         console.log(res.data)
                         navigate("/backoffice/users")

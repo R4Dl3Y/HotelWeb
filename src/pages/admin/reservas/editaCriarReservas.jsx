@@ -27,20 +27,20 @@ export const EditarCriarReservas = () => {
 
     useEffect(() => {
 
-        api.get("hotels").then((res) => {
+        api.get("hoteis").then((res) => {
             setHoteis(res.data)
         }).catch(err => {
             console.log(err);
         })
 
-        api.get("users").then((res) => {
+        api.get("utilizadores").then((res) => {
             setUtilizadores(res.data)
         }).catch(err => {
             console.log(err);
         })
 
         if (params.id !== undefined) {
-            api.get("reservation/" + params.id).then((res) => {
+            api.get("reservas/" + params.id).then((res) => {
                 setFormData(res.data);
                 setIsLoading(false);
             }).catch((err) => {
@@ -63,7 +63,7 @@ export const EditarCriarReservas = () => {
             setIsLoading(false);
         }
 
-        api.get("allrooms/hotel/"+formData.hotel_id).then((res) => {
+        api.get("quartos/hotel/"+formData.hotel_id).then((res) => {
             setQuartos(res.data)
         })
         .catch((err) => {
@@ -75,7 +75,7 @@ export const EditarCriarReservas = () => {
     useEffect(() => {
         setIsLoading(true);
       
-        api.get("room/"+formData.hotel_id).then((res) => {
+        api.get("quartos/hotel/"+formData.hotel_id).then((res) => {
             setQuartos(res.data)
             setIsLoading(false);
         }).catch(err => {
@@ -120,7 +120,7 @@ export const EditarCriarReservas = () => {
 
         if (formData._id !== null) {
             console.log(reserva)
-            api.patch("reservation/" + params.id, reserva)
+            api.patch("reservas/" + params.id, reserva)
                 .then((res) => {
                     console.log(res.data)
                     navigate("/backoffice/reservas")
@@ -134,7 +134,7 @@ export const EditarCriarReservas = () => {
                 })
         } else {
 
-            api.post("reservation", reserva)
+            api.post("reservas", reserva)
                 .then((res) => {
                     console.log(res.data)
                     navigate("/backoffice/reservas")

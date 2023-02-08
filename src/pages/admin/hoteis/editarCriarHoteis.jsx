@@ -94,7 +94,7 @@ export const EditarCriarHoteis = () => {
         }
 
         if (formData._id !== null) {
-            api.patch("hotel/" + params.id, hoteis)
+            api.patch("hoteis/" + params.id, hoteis)
                 .then((res) => {
                     console.log(res.data)
                     navigate("/backoffice/hoteis")
@@ -108,7 +108,7 @@ export const EditarCriarHoteis = () => {
                 })
         } else {
 
-            api.post("hotel", hoteis)
+            api.post("hoteis", hoteis)
                 .then((res) => {
                     console.log(res.data)
                     navigate("/backoffice/hoteis")

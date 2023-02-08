@@ -26,7 +26,7 @@ export const EditarCriarQuartos = () => {
 
 
     useEffect(() => {
-        api.get("hotels").then((res) => {
+        api.get("hoteis").then((res) => {
             setHoteis(res.data)
         }).catch(err => {
             console.log(err);
@@ -47,7 +47,7 @@ export const EditarCriarQuartos = () => {
             setIsLoading(false)
         } else {
             console.log("tem id")
-            api.get("room/" + params.id).then((res) => {
+            api.get("quartos/" + params.id).then((res) => {
                 setIsLoading(false)
                 setFormData(res.data)
             }).catch(err => {
@@ -106,7 +106,7 @@ export const EditarCriarQuartos = () => {
 
         if (formData._id !== null) {
             console.log(quartos)
-            api.patch("room/" + params.id, quartos)
+            api.patch("quartos/" + params.id, quartos)
                 .then((res) => {
                     console.log(res.data)
                     navigate("/backoffice/quartos")
@@ -120,7 +120,7 @@ export const EditarCriarQuartos = () => {
                 })
         } else {
 
-            api.post("rooms", quartos)
+            api.post("quartos", quartos)
                 .then((res) => {
                     console.log(res.data)
                     navigate("/backoffice/quartos")

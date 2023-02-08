@@ -18,7 +18,7 @@ export const ListaUtilizadores = () => {
   const [recordsPerPage] = useState(10);
 
   useEffect(() => {
-    api.get("users")
+    api.get("utilizadores")
       .then((res) => {
         setData(res.data);
         setLoading(false);

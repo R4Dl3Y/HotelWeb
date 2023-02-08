@@ -23,7 +23,7 @@ export const TabelaUtilizadores = (props) => {
 
     //codigo para apagar
 
-    api.delete("user/"+User._Id).then((res)=>{
+    api.delete("utilizadores/"+User._Id).then((res)=>{
       window.location.reload(false)
       closeshowDelete()
     }).catch((err)=>{
@@ -46,7 +46,7 @@ export const TabelaUtilizadores = (props) => {
 
     
 
-    api.patch("user/"+User._Id, admin).then((res)=>{
+    api.patch("utilizadores/"+User._Id, admin).then((res)=>{
       console.log(admin)
       window.location.reload(false)
       closeShowAdmin()

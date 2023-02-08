@@ -7,7 +7,7 @@ export const PaginaInicial = () => {
   const [hoteis, setHoteis] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    api.get("hotels").then((res) => {
+    api.get("hoteis").then((res) => {
       setHoteis(res.data);
       setLoading(false);
     }).catch((err) => {

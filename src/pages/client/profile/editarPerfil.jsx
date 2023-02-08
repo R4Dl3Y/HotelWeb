@@ -19,7 +19,7 @@ export const EditarPerfil = (props) => {
 
     useEffect(() => {
         if (user) {
-            api.get("user/" + user._id).then((res)=>{
+            api.get("utilizadores/" + user._id).then((res)=>{
                 setFormData(res.data)
                 setIsLoading(false)
             }).catch((err)=>{

@@ -20,7 +20,7 @@ export const TabelaQuartos = (props) => {
 
     //codigo para apagar
 
-    api.delete("rooms/" + Quarto._Id).then((res) => {
+    api.delete("quartos/" + Quarto._Id).then((res) => {
       window.location.reload(false)
       closeshowDelete()
     }).catch((err) => {
@@ -41,7 +41,7 @@ export const TabelaQuartos = (props) => {
       disponivel = { "disponivel": true }
     }
 
-    api.patch("room/" + Quarto._Id, disponivel).then((res) => {
+    api.patch("quartos/" + Quarto._Id, disponivel).then((res) => {
       window.location.reload(false)
       closeShowDisponivel()
     }).catch((err) => {

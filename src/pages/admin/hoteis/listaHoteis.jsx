@@ -12,7 +12,7 @@ export const ListaHoteis = () => {
   const [recordsPerPage] = useState(10);
 
   useEffect(() => {
-    api.get("hotels")
+    api.get("hoteis")
       .then((res) => {
         setData(res.data);
         setLoading(false);

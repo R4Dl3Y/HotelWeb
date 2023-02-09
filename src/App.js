@@ -16,7 +16,6 @@ import { Registro } from "./pages/client/auth/registro";
 
 import { PaginaInicial } from "./pages/client/home/PaginaInicial";
 import { Contactos } from "./components/contacts/Contactos";
-import { SobreNos } from "./components/about/SobreNos";
 
 import { PaginaInicialBack } from "./pages/admin/paginaInicial/PaginaInicialBack";
 import { ListaUtilizadores } from "./pages/admin/utilizadores/listaUtilizadores";
@@ -85,7 +84,6 @@ function App() {
 
               <Route index element={<PaginaInicial></PaginaInicial>} />
               <Route path="/contactos" element={isLoading ? <ScreenLoader></ScreenLoader> : <Contactos></Contactos>} />
-              <Route path="/sobrenos" element={isLoading ? <ScreenLoader></ScreenLoader> : <SobreNos></SobreNos>} />
               <Route path="/login" element={<LoginUser></LoginUser>} />
               <Route path="/registrar" element={<Registro></Registro>} />
               <Route path="/perfil" element={<VerificaLogin is={isLogged}></VerificaLogin>}>

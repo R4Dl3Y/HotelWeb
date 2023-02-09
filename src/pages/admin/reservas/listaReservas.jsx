@@ -64,10 +64,10 @@ export const ListaReservas = () => {
         <div className="container mt-5 mb-3">
           <div className="row align-baseline">
             <div className="col-10" >
-              <h2 className="m-0"> Lista de Reservas</h2>
+              <h2 className="m-0"> Reservations List</h2>
             </div>
             <div style={{ display: "flex" }} className="col-2 justify-content-end align-content-end">
-              <NavLink to={"/backoffice/reservas/add"}><button className="btn btn-primary ">Criar Reserva</button></NavLink>
+              <NavLink to={"/backoffice/reservas/add"}><button className="btn btn-primary ">Create Reservation</button></NavLink>
             </div>
           </div>
           <div className="col-3 mt-3">
@@ -75,7 +75,7 @@ export const ListaReservas = () => {
               <label style={{ marginRight: "10px" }} htmlFor="hotel"><h4>Hotel:</h4></label>
               <input
 
-                placeholder="Id do hotel"
+                placeholder="Hotel id"
                 type="text"
                 className="form-control"
                 id="hotel"

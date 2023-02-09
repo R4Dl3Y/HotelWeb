@@ -21,7 +21,7 @@ export const PaginaHotel = () => {
         api.get("hoteis/" + hotelId).then((res) => {
             setHotel(res.data);
 
-            api.get("quarto/" + hotelId).then((res) => {
+            api.get("quartos/hotel/" + hotelId).then((res) => {
                 setQuartosHotel(res.data);
                 setLoading(false);
 
@@ -75,9 +75,9 @@ export const PaginaHotel = () => {
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
-                                    <th>Quarto</th>
-                                    <th>Serviços</th>
-                                    <th>Preço dia</th>
+                                    <th>Room</th>
+                                    <th>Services</th>
+                                    <th>Price per day</th>
                                     <th></th>
 
                                 </tr>
@@ -89,7 +89,7 @@ export const PaginaHotel = () => {
                                         <td>{Quarto.tipo}</td>
                                         <td>{Quarto.servicos.map(serviço => <p>{serviço}</p>)}</td>
                                         <td>{Quarto.preco}</td>
-                                        <td><NavLink to={`/hotel/reservar/${hotel._id}/${Quarto._id}`}><button>Reservar</button></NavLink> </td>
+                                        <td><NavLink to={`/hotel/reservar/${hotel._id}/${Quarto._id}`}><button>Book</button></NavLink> </td>
 
                                     </tr> : ""
                                 

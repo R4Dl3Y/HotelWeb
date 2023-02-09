@@ -87,7 +87,7 @@ export const EditarPerfil = (props) => {
                             <div className="row">
                                 <div className="col-12 col-md-6">
                                     <div className="form-group">
-                                        <label htmlFor="nome">Nome</label>
+                                        <label htmlFor="nome">Name</label>
                                         <input
                                                 type="text"
                                                 className="form-control"
@@ -101,7 +101,7 @@ export const EditarPerfil = (props) => {
                                 </div>
                                 <div className="col-12 col-md-6">
                                     <div className="form-group">
-                                        <label htmlFor="apelido">Apelido</label>
+                                        <label htmlFor="apelido">Last</label>
                                         <input
                                                 type="text"
                                                 className="form-control"
@@ -132,7 +132,7 @@ export const EditarPerfil = (props) => {
                                 </div>
                                 <div className="col-12 col-md-6">
                                     <div className="form-group">
-                                        <label htmlFor="data_nascimento">Data de Nascimento</label>
+                                        <label htmlFor="data_nascimento">Birth Date</label>
                                         <input
                                                 type="date"
                                                 className="form-control"
@@ -162,7 +162,7 @@ export const EditarPerfil = (props) => {
                                 </div>
                                 <div className="col-12 col-md-6">
                                     <div className="form-group">
-                                        <label htmlFor="genero">Género</label>
+                                        <label htmlFor="genero">Gender</label>
                                         <select
                                                 className="form-control"
                                                 {...register("genero", {
@@ -181,7 +181,7 @@ export const EditarPerfil = (props) => {
                             <div className="row">
                                 <div className="col-12 col-md-6">
                                     <div className="form-group">
-                                        <label htmlFor="telefone">Telefone</label>
+                                        <label htmlFor="telefone">Phone Number</label>
                                         <input
                                                 type="number"
                                                 className="form-control"
@@ -196,8 +196,8 @@ export const EditarPerfil = (props) => {
                             </div>
                             <div className="row">
                                 <div className="col-12">
-                                {!isCorrect ? <h6>Algo correu mal verifique os dados e tente novamente</h6> : ""}
-                                    <button type="submit" className="btn btn-primary">Editar</button>
+                                {!isCorrect ? <h6>Ups! Something went wrong...</h6> : ""}
+                                    <button type="submit" className="btn btn-danger">Edit</button>
                                 </div>
                             </div>
                         </form>

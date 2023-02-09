@@ -63,35 +63,35 @@ export const TabelaUtilizadores = (props) => {
 
       <Modal show={showDelete} onHide={closeshowDelete}>
         <Modal.Header closeButton>
-          <Modal.Title>Deseja apagar o Utilizador ? </Modal.Title>
+          <Modal.Title>Do you want to delete the user ? </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <p> {`O Utilizador ${User.nome} ${User.apelido} será apagado permanentemente? `} </p>
         </Modal.Body>
         <Modal.Footer>
           <button variant="secondary" className="btn btn-secondary" onClick={closeshowDelete}>
-            Cancelar
+            Cancel
           </button>
-          <button variant="primary" className="btn btn-primary" onClick={Delete}>
-            Sim e Sair
+          <button variant="primary" className="btn btn-danger" onClick={Delete}>
+            Yes and Exit
           </button>
         </Modal.Footer>
       </Modal>
 
       <Modal show={ShowAdmin} onHide={closeShowAdmin}>
         <Modal.Header closeButton>
-          <Modal.Title> {User.admin === true ? <p>Retirar admin</p> : <p>Adicionar admin</p>}</Modal.Title>
+          <Modal.Title> {User.admin === true ? <p>Remove admin</p> : <p>Add admin</p>}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {User.admin === true ? <p>{`Deseja retirar o Admin ao Utilizador ${User.nome} ${User.apelido} ?` }</p> : 
-          <p>{`Deseja colocar Admin ao Utilizador ${User.nome} ${User.apelido} ? `}</p>}
+          {User.admin === true ? <p>{`Do you want to remove the admin role of the user ${User.nome} ${User.apelido} ?` }</p> : 
+          <p>{`Do you want to give the admin role to the user ${User.nome} ${User.apelido} ? `}</p>}
         </Modal.Body>
         <Modal.Footer>
           <button variant="secondary" className="btn btn-secondary" onClick={closeShowAdmin}>
-            Cancelar
+            Cancel
           </button>
-          <button variant="primary" className="btn btn-primary" onClick={Admin}>
-            Sim e Sair
+          <button variant="primary" className="btn btn-danger" onClick={Admin}>
+            Yes and Exit
           </button>
         </Modal.Footer>
       </Modal>
@@ -104,12 +104,12 @@ export const TabelaUtilizadores = (props) => {
               <thead>
                 <tr>
                   <th>Id</th>
-                  <th>Nome</th>
-                  <th>Apelido</th>
+                  <th>Name</th>
+                  <th>Last Name</th>
                   <th>Email</th>
-                  <th>Telefone</th>
-                  <th>Tipo</th>
-                  <th>Opções</th>
+                  <th>Phone Number</th>
+                  <th>Type</th>
+                  <th>Options</th>
                 </tr>
               </thead>
               <tbody>
@@ -122,10 +122,10 @@ export const TabelaUtilizadores = (props) => {
                     <td>{item.telefone}</td>
                     <td>{item.admin === true ? "Admin" : "Utilizador"}</td>
                     <td>
-                      <button className="btn btn-danger" onClick={() => openshowDelete(item._id,item.nome, item.apelido)}> Eliminar</button>
-                      {item.admin === true ? <button className="btn btn-danger mx-2" onClick={() => openShowAdmin(item._id, item.admin, item.nome, item.apelido)}>Retirar Admin</button>
-                        : <button className="btn btn-danger mx-2" onClick={() => openShowAdmin(item._id, item.admin, item.nome, item.apelido)}>Colocar Admin</button>}
-                      <NavLink to={`/backoffice/users/${item._id}`}><button className="btn btn-danger">Editar</button></NavLink>
+                      <button className="btn btn-danger" onClick={() => openshowDelete(item._id,item.nome, item.apelido)}> Delete</button>
+                      {item.admin === true ? <button className="btn btn-danger mx-2" onClick={() => openShowAdmin(item._id, item.admin, item.nome, item.apelido)}>Remove Admin Role</button>
+                        : <button className="btn btn-danger mx-2" onClick={() => openShowAdmin(item._id, item.admin, item.nome, item.apelido)}>Add Admin Role</button>}
+                      <NavLink to={`/backoffice/users/${item._id}`}><button className="btn btn-danger">Edit</button></NavLink>
                     </td>
                   </tr>
                 ))}

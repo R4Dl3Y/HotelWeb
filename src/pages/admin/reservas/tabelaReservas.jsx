@@ -44,10 +44,10 @@ export const TabelaReservas = (props) => {
     <>
       <Modal show={showDelete} onHide={closeshowDelete}>
         <Modal.Header closeButton>
-          <Modal.Title>Deseja apagar a reserva ? </Modal.Title>
+          <Modal.Title>Delete Reservation ? </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p> A reserva de id {Reserva._Id} será apagada permanentemente </p>
+          <p> Reservation with id {Reserva._Id} will be permanently deleted </p>
         </Modal.Body>
         <Modal.Footer>
         <button variant="secondary" className="btn btn-secondary" onClick={closeshowDelete}>
@@ -65,15 +65,15 @@ export const TabelaReservas = (props) => {
               <thead>
                 <tr>
                   <th>Id</th>
-                  <th>Id Hotel</th>
-                  <th>Id Quarto</th>
-                  <th>Id Utilizador</th>
-                  <th>Data Entrada</th>
-                  <th>Data Saida</th>
-                  <th>Preço</th>
-                  <th>Nº Pessoas</th>
-                  <th>Estado</th>
-                  <th>Opções</th>
+                  <th>Hotel Id</th>
+                  <th>Room Id</th>
+                  <th>User Id</th>
+                  <th>Check In Date</th>
+                  <th>Check Out Date</th>
+                  <th>Price</th>
+                  <th>Guests Number</th>
+                  <th>State</th>
+                  <th>Options</th>
                 </tr>
               </thead>
               <tbody>
@@ -100,8 +100,8 @@ export const TabelaReservas = (props) => {
                     </Dropdown>
                     </td>
                     <td>
-                      <button className="btn btn-danger" onClick={() => openshowDelete(item._id)}>Eliminar</button>
-                      <NavLink to={`/backoffice/reservas/${item._id}`}> <button className="btn btn-danger">Editar</button></NavLink>
+                      <button className="btn btn-danger" onClick={() => openshowDelete(item._id)}>Delete</button>
+                      <NavLink to={`/backoffice/reservas/${item._id}`}> <button className="btn btn-danger">Edit</button></NavLink>
                     </td>
                   </tr>
                 ))}

@@ -57,17 +57,17 @@ export const TabelaHoteis = (props) => {
     <>
       <Modal show={showDelete} onHide={closeshowDelete}>
         <Modal.Header closeButton>
-          <Modal.Title>Deseja eliminar o Hotel ?</Modal.Title>
+          <Modal.Title>Delete Hotel ?</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>Tem a certeza que deseja eliminar o Hotel {Hotel.nome} ?</p>
+          <p>Are you sure that you want to delete the Hotel {Hotel.nome} ?</p>
         </Modal.Body>
         <Modal.Footer>
           <button variant="secondary" className="btn btn-secondary" onClick={closeshowDelete}>
-            Cancelar
+            Cancel
           </button>
-          <button variant="primary" className="btn btn-primary" onClick={Delete}>
-            Sim e Sair
+          <button variant="danger" className="btn btn-primary" onClick={Delete}>
+            Yes and Exit
           </button>
         </Modal.Footer>
       </Modal>
@@ -79,15 +79,15 @@ export const TabelaHoteis = (props) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        {Hotel.disponivel === true ? <p>Deseja retirar a disponibilidade do Hotel {Hotel.nome}</p>
-            : <p>Deseja colocar a disponibilidade do Hotel {Hotel.nome} ?</p>}
+        {Hotel.disponivel === true ? <p>Make hotel unavailable {Hotel.nome}</p>
+            : <p>Make hotel available {Hotel.nome} ?</p>}
         </Modal.Body>
         <Modal.Footer>
           <button variant="secondary" className="btn btn-secondary" onClick={closeShowDisponivel}>
-            Cancelar
+            Cancel
           </button>
-          <button variant="primary" className="btn btn-primary" onClick={Disponivel}>
-            Sim e Sair
+          <button variant="primary" className="btn btn-danger" onClick={Disponivel}>
+            Yes and Exit
           </button>
         </Modal.Footer>
       </Modal>
@@ -100,10 +100,10 @@ export const TabelaHoteis = (props) => {
                   <thead>
                     <tr>
                       <th>Id</th>
-                      <th>Nome</th>
-                      <th>Localização</th>
-                      <th>Disponivel</th>
-                      <th>Opções</th>
+                      <th>Name</th>
+                      <th>Location</th>
+                      <th>Available</th>
+                      <th>Options</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -114,10 +114,10 @@ export const TabelaHoteis = (props) => {
                         <td>{item.endereco}</td>
                         <td>{item.disponivel === true ? "Sim" : "Não"}</td>
                         <td>
-                        <button className="btn btn-danger" onClick={()=> openshowDelete(item._id)}>Eliminar</button>
-                        {item.disponivel !== true ? <button className="btn btn-danger mx-2" onClick={()=> openShowDisponivel(item._id, item.disponivel, item.nome)}>Colocar disponivel</button>
-                          : <button className="btn btn-danger mx-2" onClick={()=> openShowDisponivel(item._id, item.disponivel, item.nome)}>Colocar indisponivel</button>}
-                          <NavLink to={`/backoffice/hoteis/${item._id}`}><button className="btn btn-danger">Editar</button></NavLink>
+                        <button className="btn btn-danger" onClick={()=> openshowDelete(item._id)}>Delete</button>
+                        {item.disponivel !== true ? <button className="btn btn-danger mx-2" onClick={()=> openShowDisponivel(item._id, item.disponivel, item.nome)}>Make available</button>
+                          : <button className="btn btn-danger mx-2" onClick={()=> openShowDisponivel(item._id, item.disponivel, item.nome)}>Make Unavailable</button>}
+                          <NavLink to={`/backoffice/hoteis/${item._id}`}><button className="btn btn-danger">Update</button></NavLink>
                         </td>
                       </tr>
                     ))}

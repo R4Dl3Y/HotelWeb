@@ -93,10 +93,10 @@ export const Registro = () => {
             <div className="col-md-6">
               <div className="card">
                 <div className="card-body">
-                  <h3 className="card-title">Registar</h3>
+                  <h3 className="card-title">SignUp</h3>
                   <form onSubmit={handleSubmit(submitForm)}>
                     <div className="form-group">
-                      <label htmlFor="nome">Nome</label>
+                      <label htmlFor="nome">Name</label>
                       <input
                         type="text"
                         className="form-control"
@@ -108,7 +108,7 @@ export const Registro = () => {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="apelido">Apelido</label>
+                      <label htmlFor="apelido">Last Name</label>
                       <input
                         type="text"
                         className="form-control"
@@ -148,7 +148,7 @@ export const Registro = () => {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="data_nascimento">Data de Nascimento</label>
+                      <label htmlFor="data_nascimento">Birth Date</label>
                       <input
                         type="date"
                         className="form-control"
@@ -172,7 +172,7 @@ export const Registro = () => {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="telefone">Telefone</label>
+                      <label htmlFor="telefone">Phone Number</label>
                       <input
                         type="number"
                         className="form-control"
@@ -188,7 +188,7 @@ export const Registro = () => {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="genero">Genero</label>
+                      <label htmlFor="genero">Gender</label>
                       <select
                         className="form-control"
                         {...register("genero", {
@@ -197,14 +197,14 @@ export const Registro = () => {
                           value: formData.genero,
                         })}
                       >
-                        <option value="Feminino">Feminino</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Outro">Outro</option>
+                        <option value="Feminino">Female</option>
+                        <option value="Masculino">Male</option>
+                        <option value="Outro">Other</option>
                       </select>
                     </div>
-                    {!isCorrect ? <h6>Algo correu mal verifique os dados e tente novamente</h6> : ""}
-                    <button type="submit" className="btn btn-primary mt-3">
-                      Registar
+                    {!isCorrect ? <h6>Ups! Something went wrong. Review the data</h6> : ""}
+                    <button type="submit" className="btn btn-danger mt-3">
+                      Register
                     </button>
                   </form>
                 </div>

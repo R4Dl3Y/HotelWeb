@@ -157,7 +157,7 @@ export const EditarCriarQuartos = () => {
                                                     value: formData.hotel_id,
                                                 })}
                                             >
-                                                <option value="">Selecione um hotel</option>
+                                                <option value="">Pick an Hotel</option>
                                                 {hoteis.map((hotel) => {
                                                     return (
                                                         <option value={hotel._id}>{hotel.nome}</option>
@@ -167,7 +167,7 @@ export const EditarCriarQuartos = () => {
                                             </select>
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="andar">Andar</label>
+                                            <label htmlFor="andar">Floor</label>
                                             <input
                                                 type="number"
                                                 className="form-control"
@@ -177,10 +177,10 @@ export const EditarCriarQuartos = () => {
                                                     value: formData.andar,
                                                 })}
                                             />
-                                            {errors.andar && <span className="text-danger">Este campo é obrigatório</span>}
+                                            {errors.andar && <span className="text-danger">Mandatory Field!</span>}
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="numero_quarto">Número do Quarto</label>
+                                            <label htmlFor="numero_quarto">Room Number</label>
                                             <input
                                                 type="number"
                                                 className="form-control"
@@ -190,10 +190,10 @@ export const EditarCriarQuartos = () => {
                                                     value: formData.numero_quarto,
                                                 })}
                                             />
-                                            {errors.numero_quarto && <span className="text-danger">Este campo é obrigatório</span>}
+                                            {errors.numero_quarto && <span className="text-danger">Mandatory Field</span>}
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="tipo">Tipo</label>
+                                            <label htmlFor="tipo">Type</label>
                                             <select
                                                 className="form-control"
                                                 {...register("tipo", {
@@ -202,16 +202,16 @@ export const EditarCriarQuartos = () => {
                                                     value: formData.tipo,
                                                 })}
                                             >
-                                                <option value="">Selecione</option>
-                                                <option value="Quarto individual">Quarto individual</option>
-                                                <option value="Quarto duplo">Quarto duplo</option>
-                                                <option value="Quarto de casal">Quarto de casal</option>
-                                                <option value="Quarto Triplo">Quarto Triplo</option>
-                                                <option value="Quarto quádruplo ">Quarto quádruplo </option>
+                                                <option value="">Select</option>
+                                                <option value="Quarto individual">Single Room</option>
+                                                <option value="Quarto duplo">Double Room</option>
+                                                <option value="Quarto de casal">Couple Room</option>
+                                                <option value="Quarto Triplo">Triple Room</option>
+                                                <option value="Quarto quádruplo ">Family Room </option>
                                             </select>
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="preco">Preço</label>
+                                            <label htmlFor="preco">Price</label>
                                             <input
                                                 type="number"
                                                 className="form-control"
@@ -221,10 +221,10 @@ export const EditarCriarQuartos = () => {
                                                     value: formData.preco,
                                                 })}
                                             />
-                                            {errors.preco && <span className="text-danger">Este campo é obrigatório</span>}
+                                            {errors.preco && <span className="text-danger">Mandatory Field!</span>}
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="descricao">Descrição</label>
+                                            <label htmlFor="descricao">Description</label>
                                             <input
                                                 type="text"
                                                 className="form-control"
@@ -234,11 +234,11 @@ export const EditarCriarQuartos = () => {
                                                     value: formData.descricao,
                                                 })}
                                             />
-                                            {errors.descricao && <span className="text-danger">Este campo é obrigatório</span>}
+                                            {errors.descricao && <span className="text-danger">Mandatory Field!</span>}
                                         </div>
                                         
                                         <div className="form-group">
-                                            <label htmlFor="disponivel">Disponível</label>
+                                            <label htmlFor="disponivel">Available</label>
                                             <select
                                                 className="form-control"
                                                 {...register("disponivel", {
@@ -247,13 +247,13 @@ export const EditarCriarQuartos = () => {
                                                     value: formData.disponivel,
                                                 })}
                                             >
-                                                <option value="">Selecione uma opção</option>
-                                                <option value="true">Sim</option>
-                                                <option value="false">Não</option>
+                                                <option value="">Pick an option</option>
+                                                <option value="true">Yes</option>
+                                                <option value="false">No</option>
                                             </select>
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="servicos">Serviços</label>
+                                            <label htmlFor="servicos">Services</label>
                                             <div className="" style={{ display: "flex", flexWrap: "wrap" }}>
                                                 {servicos.map((servico, index) => {
                                                     return (
@@ -277,8 +277,8 @@ export const EditarCriarQuartos = () => {
                                             </div>
                                         </div>
                                         <div className="form-group">
-                                            {!isCorrect ? <h6>Algo correu mal verifique os dados e tente novamente</h6> : ""}
-                                            <button type="submit" className="btn btn-primary">Guardar</button>
+                                            {!isCorrect ? <h6>Ups! Something went wrong...</h6> : ""}
+                                            <button type="submit" className="btn btn-danger">Save</button>
                                         </div>
                                     </form>
                                 </div>

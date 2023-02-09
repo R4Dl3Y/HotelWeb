@@ -82,15 +82,13 @@ export const EditarCriarHoteis = () => {
 
         setFormData(hotela);
 
-        const imagem = formData.imagens.split(",");
-
         const hoteis = {
             nome: formData.nome,
             endereco: formData.endereco,
             descricao: formData.descricao,
             disponivel: formData.disponivel,
             servicos: formData.servicos,
-            imagens: imagem
+            imagens: formData.imagens
         }
 
         if (formData._id !== null) {
@@ -133,7 +131,7 @@ export const EditarCriarHoteis = () => {
                                 <div className="card-body">
                                     <form onSubmit={handleSubmit(submitForm)}>
                                         <div className="form-group">
-                                            <label htmlFor="nome">Nome</label>
+                                            <label htmlFor="nome">Name</label>
                                             <input
                                                 type="text"
                                                 className="form-control"
@@ -143,10 +141,10 @@ export const EditarCriarHoteis = () => {
                                                     value: formData.nome,
                                                 })}
                                             />
-                                            {errors.nome && <span className="text-danger">Este campo é obrigatório</span>}
+                                            {errors.nome && <span className="text-danger">Mandatory Field!</span>}
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="endereco">Endereço</label>
+                                            <label htmlFor="endereco">Address</label>
                                             <input
                                                 type="text"
                                                 className="form-control"
@@ -156,10 +154,10 @@ export const EditarCriarHoteis = () => {
                                                     value: formData.endereco,
                                                 })}
                                             />
-                                            {errors.endereco && <span className="text-danger">Este campo é obrigatório</span>}
+                                            {errors.endereco && <span className="text-danger">Mandatory Field!</span>}
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="descricao">Descrição</label>
+                                            <label htmlFor="descricao">Description</label>
                                             <input
                                                 type="text"
                                                 className="form-control"
@@ -169,10 +167,10 @@ export const EditarCriarHoteis = () => {
                                                     value: formData.descricao,
                                                 })}
                                             />
-                                            {errors.descricao && <span className="text-danger">Este campo é obrigatório</span>}
+                                            {errors.descricao && <span className="text-danger">Mandatory Field!</span>}
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="disponivel">Disponivel</label>
+                                            <label htmlFor="disponivel">Available</label>
                                             <select
                                                 className="form-control"
                                                 {...register("disponivel", {
@@ -181,26 +179,26 @@ export const EditarCriarHoteis = () => {
                                                     value: formData.disponivel,
                                                 })}
                                             >
-                                                <option value="">Selecione</option>
-                                                <option value="false">Não</option>
-                                                <option value="true">Sim</option>
+                                                <option value="">Select</option>
+                                                <option value="false">No</option>
+                                                <option value="true">Yes</option>
                                             </select>
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="imagens">Imagens</label>
+                                            <label htmlFor="imagens">Images</label>
                                             <textarea
                                                 className="form-control"
-                                                placeholder="coloque aqui os links com uma virgula entre eles"
+                                                placeholder="Place here the links with commas between them"
                                                 {...register("imagens", {
                                                     required: true,
                                                     onChange: handleChange,
                                                     value: formData.imagens,
                                                 })}
                                             />
-                                            {errors.imagens && <span className="text-danger">Este campo é obrigatório</span>}
+                                            {errors.imagens && <span className="text-danger">Mandatory Field!</span>}
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="servicos">Serviços</label>
+                                            <label htmlFor="servicos">Services</label>
                                             <div className="" style={{ display: "flex", flexWrap: "wrap" }}>
                                                 {servicos.map((servico, index) => {
                                                     return (
@@ -223,8 +221,8 @@ export const EditarCriarHoteis = () => {
                                                 })}
                                             </div>
                                         </div>
-                                        {!isCorrect ? <h6>Algo correu mal verifique os dados e tente novamente</h6> : ""}
-                                        <button type="submit" className="btn btn-primary mt-3">Guardar</button>
+                                        {!isCorrect ? <h6>Ups! Something went wrong</h6> : ""}
+                                        <button type="submit" className="btn btn-danger mt-3">Save</button>
                                     </form>
                                 </div>
                             </div>

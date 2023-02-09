@@ -44,10 +44,10 @@ const [recordsPerPage] = useState(10);
     <div className="container mt-5 mb-3">
     <div className="row align-baseline">
       <div className="col-10" >
-        <h2 className="m-0"> Lista de Quartos</h2>
+        <h2 className="m-0"> Room List</h2>
       </div>
       <div style={{ display: "flex" }} className="col-2 justify-content-end align-content-end">
-        <NavLink to={"/backoffice/quartos/add"}><button className="btn btn-primary ">Criar Quarto</button></NavLink>
+        <NavLink to={"/backoffice/quartos/add"}><button className="btn btn-danger ">Create Room</button></NavLink>
       </div>
     </div>
   </div> )}

@@ -20,11 +20,11 @@ export const PaginaInicial = () => {
         <div className="container">
           <div className="row m-3">
             <div className="col-12">
-              <h1 className="text-center">SweetDreams</h1>
-              <h2 className="text-center">A sua plataforma de reservas de hotéis</h2>
+              <h1 className="text-center">Hotel4U</h1>
+              <h2 className="text-center">A new way to book</h2>
               <div className="row">
                 <div className="col-12">
-                  <h3 className="text-center">Aqui tem os hotéis disponiveis para si</h3>
+                  <h3 className="text-center">Hotel List:</h3>
                   <div className="row">
                     <div className="col-12">
                       <div className="container">

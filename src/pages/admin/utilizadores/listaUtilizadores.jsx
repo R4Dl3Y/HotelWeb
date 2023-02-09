@@ -44,10 +44,10 @@ export const ListaUtilizadores = () => {
         <div className="container mt-5 mb-3">
           <div className="row align-baseline">
             <div className="col-10" >
-              <h2 className="m-0"> Lista de Utilizadores</h2>
+              <h2 className="m-0"> Users List</h2>
             </div>
             <div style={{ display: "flex" }} className="col-2 justify-content-end align-content-end">
-              <NavLink to={"/backoffice/users/add"}><button className="btn btn-primary ">Criar Utilizador</button></NavLink>
+              <NavLink to={"/backoffice/users/add"}><button className="btn btn-danger ">Create User</button></NavLink>
             </div>
           </div>
         </div>)}

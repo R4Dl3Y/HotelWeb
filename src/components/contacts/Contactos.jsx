@@ -13,28 +13,30 @@ export const Contactos = () => {
 
     return (
         <>
-            <div className="container mt-2">
-                    <h1>Contactos</h1>
-                    <p>Se tiver alguma dúvida ou sugestão, não hesite em contactar-nos.</p>
+            <div className="container mt-2" style={{alignItems:"center", alignSelf:"center", justifyContent:"center", display:"flex", flexDirection:"column"}}>
+                    <h1>Contacts</h1>
+                    <p>If you have any question or doubt, you just need to write here.</p>
                     <div className="containerForm">
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <form onSubmit={handleSubmit(onSubmit)} style={{height:"100%", width:"100%"}}>
                             <div className="form-group">
-                                <label htmlFor="nome">Nome</label>
-                                <input type="text" className="form-control" id="nome" placeholder="Nome" {...register("nome", { required: true })} />
-                                {errors.nome && <span className="error">Este campo é obrigatório</span>}
+                                <label htmlFor="nome">Name</label>
+                                <input type="text" className="form-control" id="nome" placeholder="Name" {...register("nome", { required: true })} />
+                                {errors.nome && <span className="error">Mandatory Field</span>}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email</label>
                                 <input type="email" className="form-control" id="email" placeholder="Email" {...register("email", { required: true })} />
-                                {errors.email && <span className="error">Este campo é obrigatório</span>}
+                                {errors.email && <span className="error">Mandatory Field</span>}
                             </div>
                             <div className="form-group">
 
-                                <label htmlFor="mensagem">Mensagem</label>
+                                <label htmlFor="mensagem">Message</label>
                                 <textarea className="form-control" id="mensagem" rows="3" {...register("mensagem", { required: true })}></textarea>
-                                {errors.mensagem && <span className="error">Este campo é obrigatório</span>}
+                                {errors.mensagem && <span className="error">Mandatory Field</span>}
                             </div>
-                            <button type="submit" className="btn btn-primary mt-3" style={{height:"42px", width:"90px"}}>Enviar</button>
+                            <div style={{ alignSelf:"center", justifyContent:"center", alignItems:"center", display:"flex"}}>
+                            <button type="submit" className="btn btn-danger mt-3" style={{height:"42px", width:"90px", alignSelf:"center", justifyContent:"center", alignItems:"center", display:"flex"}}>Enviar</button>
+                            </div>
                         </form>
                     </div>
             </div>

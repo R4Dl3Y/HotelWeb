@@ -34,10 +34,10 @@ export const ListaHoteis = () => {
         <div className="container mt-5 mb-3">
           <div className="row align-baseline">
             <div className="col-10">
-              <h2> Lista de Hoteis</h2>
+              <h2> Hotel List</h2>
             </div>
             <div style={{ display: "flex" }} className="col-2 justify-content-end align-content-end">
-              <NavLink to={"/backoffice/hoteis/add"}> <button className="btn btn-primary">Criar Hotel</button></NavLink>
+              <NavLink to={"/backoffice/hoteis/add"}> <button className="btn btn-primary">Create Hotel</button></NavLink>
             </div>
           </div>
         </div>)}

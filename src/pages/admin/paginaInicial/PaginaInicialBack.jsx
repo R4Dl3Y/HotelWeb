@@ -5,16 +5,16 @@ export const PaginaInicialBack = () => {
         <div className="Back-Main">
             <div className="info-card"> 
             <div className="BackOfficeMain-Header">
-                <h1>Central de Administração</h1>
-                <h3>Navegue por esta página utilizando a aba exclusiva encontrada em cima</h3> 
+                <h1>DashBoard</h1>
+                <h3>For a full experience use the navigation bar</h3> 
             </div>
                 <div className="conteiner-card">            
-                    <h4>Nesta página você pode :</h4>
+                    <h4>In this page you can :</h4>
                     <ul id="main-ul">
-                        <li className="main-li"> Gerenciar Utilizadores selecionando "Utilizadores"</li>
-                        <li className="main-li"> Gerenciar Hoteis selecionando "Hoteis" </li>
-                        <li className="main-li"> Gerenciar Hoteis selecionando "Quartos" </li>
-                        <li className="main-li"> Gerenciar Reservas selecionando "Reservas" </li>
+                        <li className="main-li"> Manage the Users on "Users"</li>
+                        <li className="main-li"> Manage the Hotels on "Hotels"</li>
+                        <li className="main-li"> Manage the Rooms on "Rooms" </li>
+                        <li className="main-li"> Manage reservations on "Reservations" </li>
                     </ul>  
                 </div>
             </div>

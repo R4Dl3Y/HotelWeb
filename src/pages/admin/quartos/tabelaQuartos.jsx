@@ -54,15 +54,15 @@ export const TabelaQuartos = (props) => {
     <>
       <Modal show={showDelete} onHide={closeshowDelete}>
         <Modal.Header closeButton>
-          <Modal.Title>Eliminar Quarto</Modal.Title>
+          <Modal.Title>Delete Room</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Tem a certeza que quer eliminar o quarto {Quarto.numero_quarto} do hotel com id {Quarto.hotel_id}?</Modal.Body>
+        <Modal.Body>Are you sure that you want to delete the room {Quarto.numero_quarto} from the hotel with the id {Quarto.hotel_id}?</Modal.Body>
         <Modal.Footer>
         <button variant="secondary" className="btn btn-secondary" onClick={closeshowDelete}>
-            Cancelar
+            Cancel
           </button>
-          <button variant="primary" className="btn btn-primary" onClick={Delete}>
-            Sim e Sair
+          <button variant="primary" className="btn btn-danger" onClick={Delete}>
+            Yes and Exit
           </button>
         </Modal.Footer>
       </Modal>
@@ -74,15 +74,15 @@ export const TabelaQuartos = (props) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        {Quarto.disponivel === true ? <p>Deseja retirar a disponibilidade do Quarto {Quarto.numero_quarto} do hotel com id {Quarto.hotel_id}?</p>
-            : <p>Deseja colocar a disponibilidade do quarto {Quarto.numero_quarto} do hotel com id {Quarto.hotel_id}?</p>}
+        {Quarto.disponivel === true ? <p>Do you want to make the room unavailable {Quarto.numero_quarto} from the hotel with the id {Quarto.hotel_id}?</p>
+            : <p>Do you want to make the room available {Quarto.numero_quarto} from the hotel with the id {Quarto.hotel_id}?</p>}
         </Modal.Body>
         <Modal.Footer>
         <button variant="secondary" className="btn btn-secondary" onClick={closeShowDisponivel}>
-            Cancelar
+            Cancel
           </button>
-          <button variant="primary" className="btn btn-primary" onClick={Disponivel}>
-            Sim e Sair
+          <button variant="primary" className="btn btn-danger" onClick={Disponivel}>
+            Yes and Exit
           </button>
         </Modal.Footer>
       </Modal>
@@ -96,10 +96,10 @@ export const TabelaQuartos = (props) => {
                 <tr>
                   <th>Id</th>
                   <th>Id Hotel</th>
-                  <th>Nº Quarto</th>
-                  <th>Preço</th>
-                  <th>Disponivel</th>
-                  <th>Opções</th>
+                  <th>Room Number</th>
+                  <th>Price</th>
+                  <th>Available</th>
+                  <th>Options</th>
                 </tr>
               </thead>
               <tbody>
@@ -111,10 +111,10 @@ export const TabelaQuartos = (props) => {
                     <td>{item.preco}</td>
                     <td>{item.disponivel===true? "Sim":"Não"}</td>
                     <td>
-                      <button className="btn btn-danger" onClick={()=> openshowDelete(item._id, item.hotel_id, item.numero_quarto)}>Eliminar</button>
-                      {item.disponivel!==true? <button className="btn btn-danger mx-2" onClick={()=> openShowDisponivel(item._id, item.hotel_id, item.disponivel)}>Colocar disponivel</button>
-                      :<button className="btn btn-danger mx-2" onClick={()=> openShowDisponivel(item._id, item.hotel_id, item.numero_quarto, item.disponivel)}>Colocar indisponivel</button>}
-                     <NavLink to={`/backoffice/quartos/${item._id}`}> <button className="btn btn-danger">Editar</button></NavLink>
+                      <button className="btn btn-danger" onClick={()=> openshowDelete(item._id, item.hotel_id, item.numero_quarto)}>Delete</button>
+                      {item.disponivel!==true? <button className="btn btn-danger mx-2" onClick={()=> openShowDisponivel(item._id, item.hotel_id, item.disponivel)}>Make available</button>
+                      :<button className="btn btn-danger mx-2" onClick={()=> openShowDisponivel(item._id, item.hotel_id, item.numero_quarto, item.disponivel)}>Make unavailable</button>}
+                     <NavLink to={`/backoffice/quartos/${item._id}`}> <button className="btn btn-danger">Edit</button></NavLink>
                     </td>
                   </tr>
                 ))}

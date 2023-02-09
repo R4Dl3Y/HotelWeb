@@ -173,7 +173,7 @@ export const EditarCriarReservas = () => {
                                                     value: formData.hotel_id,
                                                 })}
                                             >
-                                                <option value="">Selecione um hotel</option>
+                                                <option value="">Pick an hotel</option>
                                                 {hoteis.map((hotel) => {
                                                     return (
                                                         <option value={hotel._id}>{hotel.nome}</option>
@@ -183,7 +183,7 @@ export const EditarCriarReservas = () => {
                                             </select>
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="quarto_id">Quarto</label>
+                                            <label htmlFor="quarto_id">Room</label>
                                             <select
                                                 className="form-control"
                                                 {...register("quarto_id", {
@@ -202,7 +202,7 @@ export const EditarCriarReservas = () => {
                                             </select>
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="utilizador_id">Utilizador</label>
+                                            <label htmlFor="utilizador_id">User</label>
                                             <select
                                                 className="form-control"
                                                 {...register("utilizador_id", {
@@ -211,7 +211,7 @@ export const EditarCriarReservas = () => {
                                                     value: formData.utilizador_id,
                                                 })}
                                             >
-                                                <option value="">Selecione um utilizador</option>
+                                                <option value="">Pick an user</option>
                                                 {utilizadores.map((utilizador) => {
                                                     return (
                                                         <option value={utilizador._id}>{utilizador.nome + " " + utilizador.apelido}</option>
@@ -222,7 +222,7 @@ export const EditarCriarReservas = () => {
 
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="data_entrada">Data de Entrada</label>
+                                            <label htmlFor="data_entrada">Check in Date</label>
                                             <input
                                                 type="date"
                                                 className="form-control"
@@ -232,10 +232,10 @@ export const EditarCriarReservas = () => {
                                                     value: formData.data_entrada,
                                                 })}
                                             />
-                                            {errors.data_entrada && <span className="text-danger">Este campo é obrigatório</span>}
+                                            {errors.data_entrada && <span className="text-danger">Mandatory Field!</span>}
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="data_saida">Data de Saída</label>
+                                            <label htmlFor="data_saida">Check out Date</label>
                                             <input
                                                 type="date"
                                                 className="form-control"
@@ -245,10 +245,10 @@ export const EditarCriarReservas = () => {
                                                     value: formData.data_saida,
                                                 })}
                                             />
-                                            {errors.data_saida && <span className="text-danger">Este campo é obrigatório</span>}
+                                            {errors.data_saida && <span className="text-danger">Mandatory Field!</span>}
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="preco">Preço</label>
+                                            <label htmlFor="preco">Price</label>
                                             <input
                                                 type="number"
                                                 className="form-control"
@@ -258,10 +258,10 @@ export const EditarCriarReservas = () => {
                                                     value: formData.preco,
                                                 })}
                                             />
-                                            {errors.preco && <span className="text-danger">Este campo é obrigatório</span>}
+                                            {errors.preco && <span className="text-danger">Mandatory Field!</span>}
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="numero_pessoas">Número de Pessoas</label>
+                                            <label htmlFor="numero_pessoas">Guests Number</label>
                                             <input
                                                 type="number"
                                                 className="form-control"
@@ -271,10 +271,10 @@ export const EditarCriarReservas = () => {
                                                     value: formData.numero_pessoas,
                                                 })}
                                             />
-                                            {errors.numero_pessoas && <span className="text-danger">Este campo é obrigatório</span>}
+                                            {errors.numero_pessoas && <span className="text-danger">Mandatory Field!</span>}
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="estado">Estado</label>
+                                            <label htmlFor="estado">State</label>
                                             <select
                                                 className="form-control"
                                                 {...register("estado", {
@@ -283,15 +283,15 @@ export const EditarCriarReservas = () => {
                                                     value: formData.estado,
                                                 })}
                                             >
-                                                <option value="">Selecione um estado</option>
-                                                <option value="negada">Negada</option>
-                                                <option value="pendente">Pendente</option>
-                                                <option value="confirmada">Confirmada</option>
-                                                <option value="cancelada">Cancelada</option>
+                                                <option value="">Pick a state</option>
+                                                <option value="negada">Denied</option>
+                                                <option value="pendente">Pending</option>
+                                                <option value="confirmada">Confirmed</option>
+                                                <option value="cancelada">Canceled</option>
                                             </select>
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="observacoes">Observações</label>
+                                            <label htmlFor="observacoes">Observations</label>
                                             <textarea
                                                 className="form-control"
                                                 {...register("observacoes", {
@@ -305,8 +305,8 @@ export const EditarCriarReservas = () => {
                                         
 
                                         <div className="form-group">
-                                        {!isCorrect ? <h6>Algo correu mal verifique os dados e tente novamente</h6> : ""}
-                                            <button type="submit" className="btn btn-primary">Guardar</button>
+                                        {!isCorrect ? <h6>Ups! Something went wrong...</h6> : ""}
+                                            <button type="submit" className="btn btn-danger">Save</button>
                                         </div>
                                     </form>
                                 </div>

@@ -50,7 +50,7 @@ export const PerfilUser = (props) => {
                 <div className="user-page-main">
                     <div>
                         <div id='user-page-header'>
-                            <h1>Olá {User.nome} {User.apelido}</h1>
+                            <h1>Hello {User.nome} {User.apelido}</h1>
                         </div>
 
 
@@ -66,13 +66,13 @@ export const PerfilUser = (props) => {
                             <thead>
                                 <tr>
                                     <th>Hotel</th>
-                                    <th>Tipo de Quarto</th>
+                                    <th>Room Type</th>
                                     <th>Check In</th>
                                     <th>Check Out</th>
-                                    <th>Numero de noites</th>
-                                    <th>Numero de pessoas</th>
-                                    <th>Preço Total</th>
-                                    <th>Estado</th>
+                                    <th>Number Of Nights</th>
+                                    <th>Number of guests</th>
+                                    <th>Total Price</th>
+                                    <th>State</th>
                                 </tr>
                             </thead>
 

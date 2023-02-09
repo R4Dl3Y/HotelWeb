@@ -125,7 +125,7 @@ const UserData = (props) => {
             <h1> Dados do Cliente </h1>
             <Form onSubmit={handleSubmit(submitForm)}>
                 <Form.Group className="mb-3" >
-                    <Form.Label>Nome </Form.Label>
+                    <Form.Label>Name </Form.Label>
                     <div id='nome'>
                         <Form.Control type="text" placeholder="Nome" defaultValue={User.nome}
                             {...register("nome", {
@@ -142,19 +142,16 @@ const UserData = (props) => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" >
-                    <Form.Label>Endereço de email </Form.Label>
+                    <Form.Label>Email Adress</Form.Label>
                     <Form.Control type="email" placeholder="email" defaultValue={User.email}
                         {...register("email", {
                             required: true,
                         })}
                     />
-                    <Form.Text className="text-muted">
-                        Estas informações não serão partilhadas com ninguém
-                    </Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3" >
-                    <Form.Label>Telefone </Form.Label>
+                    <Form.Label>Phone Number </Form.Label>
                     <Form.Control type="number" placeholder="Numero de Telefone" defaultValue={User.telefone}
                         {...register("telefone", {
                             required: true,
@@ -163,7 +160,7 @@ const UserData = (props) => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" >
-                    <Form.Label>Data de Nascimento</Form.Label>
+                    <Form.Label>Birth Date</Form.Label>
                     <Form.Control type="date" placeholder="Data de Nascimento" defaultValue={User.data_nascimento}
                         {...register("data_nascimento", {
                             required: true,
@@ -171,7 +168,7 @@ const UserData = (props) => {
                     />
                 </Form.Group>
                 <Form.Group className="mb-3" >
-                    <Form.Label>Nif </Form.Label>
+                    <Form.Label>NIF </Form.Label>
                     <Form.Control type="number" placeholder="Nif" defaultValue={User.nif}
                         {...register("nif", {
                             required: true,
@@ -182,13 +179,13 @@ const UserData = (props) => {
 
                 <div id='Botoes'>
 
-                    <Button variant="primary" type="submit">
-                        Confirmar e seguinte
+                    <Button variant="dark" type="submit">
+                        Check and Next
                     </Button>
 
-                    <Button variant="primary" >
+                    <Button variant="danger" >
                         <Link to={`/hotel/${Hotel._id}`} className="text-white text-decoration-none">
-                            Cancelar
+                            Cancel
                         </Link>
                     </Button>
 
@@ -208,17 +205,17 @@ const QuartoData = (props) => {
     return (
         <div>
             <div>
-                <h1> Dados do Hotel </h1>
-                <h3>Nome do hotel :  {Hotel.nome} </h3>
-                <h5>Localização : {Hotel.cidade} - {Hotel.endereco}</h5>
+                <h1> Hotel Information </h1>
+                <h3>Hotel name :  {Hotel.nome} </h3>
+                <h5>Location : {Hotel.cidade} - {Hotel.endereco}</h5>
             </div>
             <div>
-                <h1> Dados do Quarto </h1>
+                <h1> Room Information </h1>
                 <div>
                     <h5>{Quarto.tipo} - {Quarto.preco} €</h5>
 
                     <div className='serviços'>
-                        <h5>Serviços: </h5>
+                        <h5>Services: </h5>
 
 
                         {Quarto.servicos.map(serviço => <p>{serviço} ,</p>)}
@@ -228,13 +225,13 @@ const QuartoData = (props) => {
             </div>
 
             <div id='Botoes'>
-                <Button variant="primary" type="submit" onClick={handleClick}>
-                    Confirmar e seguinte
+                <Button variant="dark" type="submit" onClick={handleClick}>
+                    Confirm and Next
                 </Button>
 
-                <Button variant="primary" >
+                <Button variant="danger" >
                     <Link to={`/hotel/${Hotel._id}`} className="text-white text-decoration-none">
-                        Cancelar
+                        Cancel
                     </Link>
                 </Button>
             </div>
@@ -280,15 +277,15 @@ const DataData = (props) => {
 
 
                 <Form.Group className="mb-3" controlId="formBasicCheckIN">
-                    <Form.Label>Data de Check-in</Form.Label>
+                    <Form.Label>Check-in Date</Form.Label>
                     <Form.Control type="date" placeholder="Data de Check-in" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckOUT">
-                    <Form.Label>Data de Check-out</Form.Label>
+                    <Form.Label>Check-out Date</Form.Label>
                     <Form.Control type="date" placeholder="Data Check-out" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicNumberPeople">
-                    <Form.Label>Numero de pessoas</Form.Label>
+                    <Form.Label>Guests Number</Form.Label>
                     <Form.Control type="number" placeholder="Numero de pessoas" />
                 </Form.Group>
 
@@ -296,11 +293,11 @@ const DataData = (props) => {
 
                 <div id='Botoes'>
 
-                    <Button variant="primary" type="submit" onClick={handleClick}>
-                        Confirmar e seguinte
+                    <Button variant="dark" type="submit" onClick={handleClick}>
+                        Confirm and Next
                     </Button>
 
-                    <Button variant="primary" >
+                    <Button variant="danger" >
                         <Link to={`/hotel/${Hotel._id}`} className="text-white text-decoration-none">
                             Cancelar
                         </Link>
@@ -361,30 +358,30 @@ const Fim = (props) => {
     console.log(preco);
     return (
         <div>
-            <h1>Confirma o pagamento de {precoTotal} € por {diffDays} dia/s ? </h1>
+            <h1>Confirm total payment of {precoTotal} € per {diffDays} day/s ? </h1>
             <div>
                 <Accordion defaultActiveKey="1" flush>
                     <Accordion.Item eventKey="0">
-                        <Accordion.Header>Dados do cliente </Accordion.Header>
+                        <Accordion.Header>Client Information </Accordion.Header>
                         <Accordion.Body>
-                            <p>Nome: {User.nome} {User.apelido}</p>
+                            <p>Name: {User.nome} {User.apelido}</p>
                             <p>Email: {User.email}</p>
-                            <p>Telemóvel: {User.telefone}</p>
-                            <p>Nif : {User.nif}</p>
+                            <p>Phone Number: {User.telefone}</p>
+                            <p>NIF : {User.nif}</p>
                         </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="1">
-                        <Accordion.Header>Dados do Quarto</Accordion.Header>
+                        <Accordion.Header>Room Information</Accordion.Header>
                         <Accordion.Body>
-                            <p>Nome do hotel : {Hotel.nome}</p>
-                            <p>Localização : {Hotel.cidade} - {Hotel.endereco}</p>
-                            <p>Quarto : {props.Quarto.tipo}</p>
-                            <p>Preço ( por noite ): {props.Quarto.preco} €</p>
-                            <p>Data de Check in : {`${new Date(Data.CheckIn).toLocaleDateString("PT-pt")}`}</p>
-                            <p>Data de Check out : {`${new Date(Data.CheckOut).toLocaleDateString("PT-pt")}`}</p>
-                            <p>Numero de Pessoas : {Data.numberPeople}</p>
-                            <p>Numero de Noite : {diffDays}</p>
-                            <p>Preço Total : {precoTotal} €</p>
+                            <p>Hotel Name : {Hotel.nome}</p>
+                            <p>Location : {Hotel.cidade} - {Hotel.endereco}</p>
+                            <p>Room : {props.Quarto.tipo}</p>
+                            <p>Price ( por noite ): {props.Quarto.preco} €</p>
+                            <p>Check in Date : {`${new Date(Data.CheckIn).toLocaleDateString("PT-pt")}`}</p>
+                            <p>Check out Date : {`${new Date(Data.CheckOut).toLocaleDateString("PT-pt")}`}</p>
+                            <p>Number of Guests : {Data.numberPeople}</p>
+                            <p>Number of Nights : {diffDays}</p>
+                            <p>Total Price : {precoTotal} €</p>
 
                         </Accordion.Body>
                     </Accordion.Item>
@@ -392,10 +389,10 @@ const Fim = (props) => {
             </div>
 
             <div id='Botoes'>
-                <Button variant="primary" onClick={handleClick}> Sim </Button>
+                <Button variant="dark" onClick={handleClick}> Yes </Button>
 
 
-                <Button variant="primary"> <Link to={`/hotel/${Hotel._id}`} className="text-white text-decoration-none">
+                <Button variant="danger"> <Link to={`/hotel/${Hotel._id}`} className="text-white text-decoration-none">
                     Não e Cancelar
                 </Link> </Button>
             </div>
@@ -407,12 +404,11 @@ const Sucesso = (props) => {
 
     setTimeout(() => {
         navigate("/");
-        console.log("oi")
     }, 1000);
 
     return (
         <div>
-            <h1> Reserva feita com sucesso </h1>
+            <h1> Reserved Successfully </h1>
         </div>)
 
 }
